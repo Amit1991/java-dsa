@@ -24,7 +24,7 @@ public class TwoSum {
         }
 
         int[] answerArr = new int[2];
-        int sum = 0;
+        int sum = Integer.MIN_VALUE;
 
         for(int i=0; i < nums.length && sum != target; i++) {
             for(int j=i+1; j < nums.length && sum != target; j++) {
