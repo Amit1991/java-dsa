@@ -3,6 +3,8 @@ package arrays;
 import java.util.Arrays;
 import java.util.Scanner;
 
+import static arrays.ArrayUtils.getIntegerArrayInput;
+
 public class TwoSum {
 
     public static void main(String[] args) {
@@ -10,18 +12,7 @@ public class TwoSum {
         Scanner in = new Scanner(System.in);
         System.out.println("Please enter target sum:");
         int target = Integer.parseInt(in.nextLine());
-        System.out.println("Please enter sample array:");
-        String arrayString = in.nextLine();
-        String[] strArr = arrayString.split(",");
-        int[] nums = new int[strArr.length];
-        for(int i = 0; i < strArr.length; i++) {
-            try
-            {
-                nums[i] = Integer.parseInt(strArr[i]);
-            } catch (NumberFormatException e) {
-                System.err.println("Try again with an array of integers only.");
-            }
-        }
+        int[] nums = getIntegerArrayInput();
 
         int[] answerArr = new int[2];
         int sum = Integer.MIN_VALUE;
