@@ -4,6 +4,11 @@ import java.util.Scanner;
 
 public class ArrayUtils {
 
+    public static String[] getSampleStrings() {
+
+        return new String[]{"flower","flow","flight","flock","block","inflight","highlight"};
+    }
+
     public static int[] getSampleRandomArray() {
 
         return new int[]{1,8,6,2,5,4,8,3,7};
