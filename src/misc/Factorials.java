@@ -1,7 +1,10 @@
 package misc;
 
+import misc.annotations.Done;
+
 import java.util.Scanner;
 
+@Done
 public class Factorials {
 
     public static long printAndCountFactors(long n, Speed speed){
