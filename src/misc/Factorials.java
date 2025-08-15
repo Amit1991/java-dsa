@@ -6,18 +6,15 @@ public class Factorials {
 
     public static long printAndCountFactors(long n, Speed speed){
 
-        switch (speed) {
-
-            case NORMAL:
-                return countFactors(n);
-            case FAST:
-                return countFactorsFast(n);
-            case FASTEST:
-                return countFactorsSuperfast(n);
-            default:
-                System.out.println( "Speed either not specified or not supported.");
-                return -1;
-        }
+        return switch (speed) {
+            case NORMAL -> countFactors(n);
+            case FAST -> countFactorsFast(n);
+            case FASTEST -> countFactorsSuperfast(n);
+            default -> {
+                System.out.println("Speed either not specified or not supported.");
+                yield -1;
+            }
+        };
     }
 
     public static long countFactors(long n){
