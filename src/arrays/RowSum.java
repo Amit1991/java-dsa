@@ -35,8 +35,8 @@ public class RowSum {
 
             resTemp = arr[i];
 
-            for (int j = 0; j < resTemp.length; j++) {
-                res[i] += resTemp[j];
+            for (int k : resTemp) {
+                res[i] += k;
             }
         }
 
@@ -51,7 +51,7 @@ public class RowSum {
 
     public static int[] getRowSum(int[][] arr, Speed speed){
 
-        int[] res = switch (speed) {
+        return switch (speed) {
             case NORMAL -> getRowSum(arr);
             case FAST -> getRowSumFast(arr);
             case FASTER -> getRowSumFaster(arr);
@@ -61,8 +61,6 @@ public class RowSum {
                 yield null;
             }
         };
-
-        return res;
     }
 
     public static void main(String[] args) {
