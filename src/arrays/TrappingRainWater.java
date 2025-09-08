@@ -34,6 +34,7 @@ public class TrappingRainWater {
     }
 
     //TC: O(n), SC: O(1)
+    //This is a two-pointer approach
     public static int trapRainWaterCompact(int[] height) {
 
         int rmax = 0;
