@@ -18,8 +18,62 @@ public class Mod {
         }
     }
 
+    /**
+     * Computes the greatest common divisor (GCD) of two integers using the Euclidean algorithm.
+     * The GCD is the largest integer that divides both input integers without leaving a remainder.
+     * TC: O(logn)
+     * SC: O(1)
+     */
+    public static int gcd(int a, int b) {
+
+        if (a == 0) return b;
+        return gcd(b%a, a);
+    }
+
+    /**
+     * Finds the largest coprime number between a and b in iterative way
+     * TC: O(a * log(b))
+     * SC: O(1)
+     */
+    public static int largestCoprime(int a, int b) {
+
+        for(int i = a/2; i >= 1; i--) {
+
+            if(a % i == 0) {
+
+                if(gcd(i, b) == 1) return i;
+            }
+        }
+
+        return 1;
+    }
+
+    /**
+     * Finds the largest coprime number that is less than or equal to the given integer 'a'
+     * such that it is coprime with the integer 'b'. The method uses an iterative approach
+     * with the Euclidean algorithm for efficiency.
+     * TC: O(log(a) * log(b))
+     * SC: O(1)
+     */
+    public static int largestCoprimeFast(int a, int b) {
+
+        int gcd = gcd(a, b);
+
+        while(gcd != 1) {
+
+            a = a / gcd;
+            gcd = gcd(a, b);
+        }
+
+        return a;
+    }
+
     public static void main(String[] args) {
 
         System.out.println( fastPowerWithMod(2, 10, 13));
+        System.out.println( gcd(10, 5));
+        System.out.println( gcd(100, 150));
+        System.out.println( largestCoprime(10, 15));
+        System.out.println( largestCoprimeFast(10, 15));
     }
 }
