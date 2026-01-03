@@ -68,6 +68,26 @@ public class Mod {
         return a;
     }
 
+    /**
+     * Computes the least common multiple (LCM) of two integers.
+     * The LCM is the smallest positive integer that is divisible by both input integers.
+     * This method uses the formula LCM(x, y) = (x * y) / GCD(x, y), where GCD is the greatest common divisor.
+     */
+    private static int lcm(int x, int y) {
+
+        return (x * y) / gcd(x, y);
+    }
+
+    /**
+     * Computes the result of a divisor game involving three integers.
+     * The method calculates the integer division of A by the least common
+     * multiple (LCM) of B and C. The LCM is computed using the helper method lcm.
+     */
+    private static int divisorGameResults(int A, int B, int C) {
+
+        return A / lcm(B, C);
+    }
+
     public static void main(String[] args) {
 
         System.out.println( fastPowerWithMod(2, 10, 13));
@@ -75,5 +95,6 @@ public class Mod {
         System.out.println( gcd(100, 150));
         System.out.println( largestCoprime(10, 15));
         System.out.println( largestCoprimeFast(10, 15));
+        System.out.println( divisorGameResults(12, 3, 2));
     }
 }
